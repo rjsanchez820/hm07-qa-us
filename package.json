@@ -4,7 +4,7 @@
   "scripts": {
     "lint": "npx eslint .",
     "test": "npx jest",
-    "apidoc": "apidoc -i src/ -0 doc/"
+    "apidoc": "apidoc -i src/ -o doc/"
   },
   "keywords": [],
   "author": "",
