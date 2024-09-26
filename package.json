@@ -1,14 +1,10 @@
-{
-  "name": "hm07-qa-us",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
+{ "name": "hm07-qa-us", "version": "1.0.0", "description": "", "main": "index.js", "directories": {
     "test": "tests"
   },
   "scripts": {
     "lint": "npx eslint .",
-    "test": "npx jest"
+    "test": "npx jest",
+    "apidoc": "apidoc -i src/ -0 doc/"
   },
   "keywords": [],
   "author": "",
