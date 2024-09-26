@@ -1,10 +1,26 @@
 /**
- * @api {get} /users Request User information
- * @apiName GetUser
- * @apiGroup User
- *
- * @apiSuccess {String} id User's unique ID.
- * @apiSuccess {String} name User's name.
+ * @api {get} /your/endpoint Retrieve Expected Data
+ * @apiName GetExpectedData
+ * @apiGroup YourGroup
+ * @apiDescription This API endpoint returns data that includes an ID and a name.
+ * 
+ * @apiSuccess {Number} id The ID of the returned data.
+ * @apiSuccess {String} name The name associated with the returned data.
+ * 
+ * @apiSuccessExample {json} Success-Response:
+ *     HTTP/1.1 200 OK
+ *     {
+ *       "id": 1,
+ *       "name": "Expected Name"
+ *     }
+ * 
+ * @apiError {String} error Description of the error that occurred.
+ * 
+ * @apiErrorExample {json} Error-Response:
+ *     HTTP/1.1 400 Bad Request
+ *     {
+ *       "error": "Invalid request"
+ *     }
  */
 
 // Test to parse the response body and check expected data
