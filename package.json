@@ -8,7 +8,8 @@
   },
   "scripts": {
     "lint": "npx eslint .",
-    "test": "npx jest"
+    "test": "npx jest",
+    "apidoc": "apidoc -i Project7/ -o doc/"
   },
   "keywords": [],
   "author": "",

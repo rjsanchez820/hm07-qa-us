@@ -1,3 +1,12 @@
+/**
+ * @api {get} /users Request User information
+ * @apiName GetUser
+ * @apiGroup User
+ *
+ * @apiSuccess {String} id User's unique ID.
+ * @apiSuccess {String} name User's name.
+ */
+
 // Test to parse the response body and check expected data
 test('should return expected data in the response body', async () => {
   try {
