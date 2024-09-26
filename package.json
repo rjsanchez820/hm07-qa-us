@@ -1,9 +1,4 @@
-{
-  "name": "hm07-qa-us",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
+{ "name": "hm07-qa-us", "version": "1.0.0", "description": "", "main": "index.js", "directories": {
     "test": "tests"
   },
   "scripts": {
@@ -15,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "apidoc": "^1.2.0",
     "eslint": "^8.35.0",
     "eslint-plugin-jest": "^27.2.1",
     "jest": "^29.4.3"
