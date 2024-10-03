@@ -1,17 +1,3 @@
-/**
- * @api 
- * @apiName 
- * @apiDescription 
- * @apiSuccess 
- * @apiSuccess 
- * 
- * @apiSuccessExample 
- * 
- * @apiError 
- * 
- * @apiErrorExample 
- */
-
 const config = require('../config');
 
 test('should return expected data in the response body', async () => {

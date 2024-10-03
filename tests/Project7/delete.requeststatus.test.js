@@ -1,19 +1,3 @@
-/**
- * @api 
- * @apiName 
- * @apiGroup 
- * @apiDescription 
- * 
- * @apiSuccess 
- * 
- * @apiSuccessExample 
- * 
- * 
- * @apiError 
- * 
- * @apiErrorExample 
- */
-
 const config = require('../config');
 
 test('should return status 200 for a successful DELETE request', async () => {

@@ -1,22 +1,3 @@
-/**
- * @api 
- * @apiName 
- * @apiGroup
- * @apiDescription 
- * 
- * @apiSuccess 
- * @apiSuccess 
- * @apiSuccess 
- * @apiSuccess 
- * 
- * @apiSuccessExample 
- * 
- * @apiError 
- * 
- * @apiErrorExample 
- */
-
-
 const config = require('../config');
 
 const requestBody = {
@@ -38,13 +19,13 @@ test('should return expected updated data in the response body after PUT request
             body: JSON.stringify(requestBody),
         });
 
-        data = await response.json(); // Parse the JSON from the response
+        data = await response.json(); 
     } catch (error) {
         console.error('Error parsing the response body:', error);
     }
 
-    expect(response.status).toBe(200); // Check if the response status is 200 OK
-    expect(data).toHaveProperty('itemId'); // Check that response contains 'itemId'
-    expect(data.item).toBe('Updated Apple'); // Check that the 'item' field matches
-    expect(data.quantity).toBe(10); // Check that the 'quantity' field matches
+    expect(response.status).toBe(200); 
+    expect(data).toHaveProperty('itemId'); 
+    expect(data.item).toBe('Updated Apple'); 
+    expect(data.quantity).toBe(10); 
 });

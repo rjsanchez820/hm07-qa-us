@@ -1,25 +1,9 @@
-/**
- * @api 
- * @apiName 
- * @apiGroup 
- * @apiDescription 
- * 
- * @apiParam 
- * @apiParam 
- * @apiParam 
- * 
- * @apiError 
- * 
- * @apiErrorExample 
- */
-
-
 const config = require('../config');
 
 const invalidRequestBody = {
     itemId: '12345',
-    item: '', // Empty item field, which is invalid
-    quantity: -10 // Negative quantity, which is also invalid
+    item: '', 
+    quantity: -10 
 };
 
 test('should return status 400 for an invalid PUT request', async () => {
@@ -37,5 +21,5 @@ test('should return status 400 for an invalid PUT request', async () => {
         console.error('Error during invalid PUT request:', error);
     }
 
-    expect(response.status).toBe(400); // Check if the response status is 400 Bad Request
+    expect(response.status).toBe(400); 
 });

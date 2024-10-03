@@ -1,21 +1,3 @@
-/**
- * @api 
- * @apiName 
- * @apiGroup 
- * 
- * @apiParam 
- * @apiParam 
- * 
- * @apiSuccess 
- * 
- * @apiSuccessExample 
- * 
- * @apiError 
- * 
- * @apiErrorExample 
- */
-
-
 const config = require('../config');
 
 const requestBody = {
