@@ -12,7 +12,8 @@ const config = require('../config');
  * 
  * @apiError 
  * @apiErrorExample 
- 
+ */ 
+
 const config = require('../config');
 
 // Test to check the response status code for a GET request
