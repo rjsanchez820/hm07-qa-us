@@ -10,7 +10,7 @@ test('should return status 404 for the GET request', async () => {
     throw new Error('GET request failed'); 
   }
 
-  expect(response.status).toBe(200);
+  expect(response.status).toBe(404);
 
   const responseData = await response.json();
 
