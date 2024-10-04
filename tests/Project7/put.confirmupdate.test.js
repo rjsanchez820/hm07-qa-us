@@ -11,7 +11,7 @@ test('should return expected updated data in the response body after PUT request
     let data;
 
     try {
-        response = await fetch(`${config.API_URL}/your/endpoint`, {
+        response = await fetch(`${config.API_URL}/tests/Project7/put.confirmupdate.test.js`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
