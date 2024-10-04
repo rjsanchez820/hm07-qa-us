@@ -1,4 +1,4 @@
-const config = require('../config');
+const config = require('../../config');
 
 test('should return status 200 for the GET request', async () => {
   let response;

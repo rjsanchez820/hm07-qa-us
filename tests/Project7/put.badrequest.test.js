@@ -1,4 +1,4 @@
-const config = require('../config');
+const config = require('../../config');
 
 const invalidRequestBody = {
     itemId: '12345',
