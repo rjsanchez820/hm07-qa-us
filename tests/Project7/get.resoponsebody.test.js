@@ -1,4 +1,4 @@
-const config = require('../config');
+const config = require('../../config');
 
 test('should return expected data in the response body', async () => {
   let response;
