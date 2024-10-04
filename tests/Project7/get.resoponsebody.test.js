@@ -5,7 +5,7 @@ test('should return expected data in the response body', async () => {
   let data;
 
   try {
-    response = await fetch(`${config.API_URL}/your/endpoint`);
+    response = await fetch(`${config.API_URL}/kits?cardId=1`);
     data = await response.json(); // Parse the JSON from the response
   } catch (error) {
     console.error('Error parsing the response body:', error);
