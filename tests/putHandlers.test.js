@@ -43,5 +43,5 @@ test('Response body should reflect the updated data', async () => {
         console.error(error);
     }
 
-    expect(actualResponseBody.ok).toBeTruthly();
+    expect(actualResponseBody.ok).toBe(true);
 });
