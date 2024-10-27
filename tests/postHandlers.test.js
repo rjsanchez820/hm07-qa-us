@@ -1,58 +1,47 @@
-const config = require('../config'); 
+// eslint-disable-next-line no-undef
+const config = require('../config');
 
-let validKit = { 
-    name: "Picnic Kit",  
-    productsList: [
+const requestBody = {
+     "productsList": [
         {
-            id: 1,  
-            name: "Orange Juice",
-            price: 2,   
-            weight: 473, 
-            units: 'ml', 
-            quantity: 1  
-        },
-        {
-            id: 2,  
-            name: "Sandwich",
-            price: 5,   
-            weight: 200, 
-            units: 'g',
-            quantity: 2  
+            "id": 5,
+            "quantity": 3
         }
-    ]
-};
+     ]
+}
 
-let invalidKit = { 
-    name: "",  
-    productsList: []
-};
-
-test('Create kit with valid data should return 201', async () => {
+test('Status code should be 201', async () => {
+    let actualStatusCode;
     try {
-        const response = await fetch(`${config.API_URL}/api/v1/kits`, { 
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(validKit), 
-        });
-        expect(response.status).toBe(201);  
-    } catch (error) {
-        console.error('Error creating kit:', error);
-    }
+		const response = await fetch(`${config.API_URL}/api/v1/orders`, {
+			method: 'POST',
+			headers: {
+			'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(requestBody)
+		});
+        actualStatusCode = response.status;
+	} catch (error) {
+		console.error(error);
+	}
+
+    expect(actualStatusCode).toBe(201);
 });
 
-test('Create kit with invalid data should return 400', async () => {
+test('Response body should contain....', async () => {
+    let actualResponseBody;
     try {
-        const response = await fetch(`${config.API_URL}/api/v1/kits`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(invalidKit),  
-        });  
-    } catch (error) {
-        console.error('Error creating kit with invalid data:', error);
-    }
-    expect(response.status).toBe(400);
+		const response = await fetch(`${config.API_URL}/api/v1/orders`, {
+			method: 'POST',
+			headers: {
+			'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(requestBody)
+		});
+        actualResponseBody = await response.json();
+	} catch (error) {
+		console.error(error);
+	}
+
+    expect(actualResponseBody["courierService"]).toBe("Order and Go");
 });

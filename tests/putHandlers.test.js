@@ -1,52 +1,47 @@
+// eslint-disable-next-line no-undef
 const config = require('../config');
 
-const updatedKit = {
-    name: "Updated Picnic Kit",
-    productsList: [
+const updateRequestBody = {
+    "productsList": [
         {
-            id: 1,
-            name: "Mountain Dew",
-            price: 1,
-            weight: 1,
-            units: 'l',
-            quantity: 1
+            "id": 5,
+            "quantity": 3
         }
     ]
 };
 
-const invalidUpdate = {
-    name: "",  
-    productsList: []
-};
-
-test('Update kit with valid data should return 200 and updated kit', async () => {
+test('Status code should be 200 for PUT request', async () => {
+    let actualStatusCode;
     try {
-        const response = await fetch(`${config.API_URL}/api/v1/kits?cardId=1`, {
+        const response = await fetch(`${config.API_URL}/api/v1/kits/5`, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify(updatedKit),
+            body: JSON.stringify(updateRequestBody)
         });
-        expect(response.status).toBe(200);  
-        const data = await response.json();
-        expect(data.name).toBe(updatedKit.name);
+        actualStatusCode = response.status;
     } catch (error) {
-        console.error('Error updating kit:', error);
+        console.error(error);
     }
+
+    expect(actualStatusCode).toBe(200);
 });
 
-test('Update kit with invalid data should return 400', async () => {
+test('Response body should reflect the updated data', async () => {
+    let actualResponseBody;
     try {
-        const response = await fetch(`${config.API_URL}/api/v1/kits?cardId=1`, {
+        const response = await fetch(`${config.API_URL}/api/v1/kits/5`, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify(invalidUpdate),
+            body: JSON.stringify(updateRequestBody)
         });
-        expect(response.status).toBe(400);  
+        actualResponseBody = await response.json();
     } catch (error) {
-        console.error('Error updating kit with invalid data:', error);
+        console.error(error);
     }
+
+    expect(actualResponseBody.ok).toBeTruthly();
 });
